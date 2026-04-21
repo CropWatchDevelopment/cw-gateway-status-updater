@@ -8,7 +8,7 @@ export type CwGatewayRow = {
   is_public: boolean;
 };
 
-export type CwGatewayInsert = Omit<CwGatewayRow, "id" | "created_at">;
+export type CwGatewayInsert = Omit<CwGatewayRow, "id" | "created_at" | "is_public"> & Partial<Pick<CwGatewayRow, "is_public">>;
 
 export type Database = {
   public: {

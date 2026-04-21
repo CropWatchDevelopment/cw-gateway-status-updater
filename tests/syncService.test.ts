@@ -43,24 +43,22 @@ describe("GatewayStatusSyncService", () => {
         updated_at: "2026-04-21T00:00:00.000Z",
         gateway_name: "Gateway Online",
         is_online: true,
-        gateway_id: "gw-online",
-        is_public: true
+        gateway_id: "gw-online"
       },
       {
         updated_at: "2026-04-21T00:00:00.000Z",
         gateway_name: "gw-offline",
         is_online: false,
-        gateway_id: "gw-offline",
-        is_public: false
+        gateway_id: "gw-offline"
       },
       {
         updated_at: "2026-04-21T00:00:00.000Z",
         gateway_name: "gw-au",
         is_online: true,
-        gateway_id: "gw-au",
-        is_public: false
+        gateway_id: "gw-au"
       }
     ]);
+    expect(repository.rows.every((row) => !("is_public" in row))).toBe(true);
   });
 
   test("checks unresolved gateways against both configured clusters", async () => {

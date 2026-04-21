@@ -161,8 +161,7 @@ function toCwGatewayInsert(gateway: TtiGateway, isOnline: boolean, updatedAt: st
     updated_at: updatedAt,
     gateway_name: name && name.length > 0 ? name : gatewayId,
     is_online: isOnline,
-    gateway_id: gatewayId,
-    is_public: gateway.status_public ?? false
+    gateway_id: gatewayId
   };
 }
 

@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Build and test output
+dist/
+build/
+coverage/
+.nyc_output/
+
+# Runtime logs
+*.log
+logs/
+
+# Local env files with secrets
+.env
+.env.*
+!.env-test
+
+# Bun / tooling caches
+.bun/
+.cache/
+tmp/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp

@@ -60,10 +60,10 @@ bun run typecheck
 
 ## Standalone Server Scheduling
 
-Cron example:
+Cron example (Run every 15 min):
 
 ```cron
-*/5 * * * * cd /opt/cw-gateway-status-updater && /usr/local/bin/bun run sync >> /var/log/cw-gateway-status-updater.log 2>&1
+*/15 * * * * cd "/opt/cw-gateway-status-updater" && /usr/local/bin/bun run sync >> "/var/log/cw-gateway-status-updater.log" 2>&1
 ```
 
 Systemd timer is also suitable because the app is intentionally one-shot and exits cleanly after each sync.
